@@ -1,0 +1,35 @@
+<!-- LAB1 -->
+<!--A response when click on mouse: -->
+<!--Author: DIVYA BHAT_1NT18IS055-->
+<!--Date: 09-04-2021-->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="">
+    <title>LAB</title>  
+</head>
+        <center><h1>Registration</h1></center>
+        <div id ="container">
+<input type="text" id="fname" placeholder="Enter  your first name">
+<br>
+<br>
+<input type="text" id="lname" placeholder="Enter your last name">
+<br>
+<br>
+<input type="text" id="email" placeholder="Enter your mail id">
+<br>
+<br>
+<input type="date" id="DOB" placeholder="Enter your date of birth">
+<br>
+<br>
+<input type ="submit" id="submit" value="submit">
+</body>
+<p id ="demo"></p>
+<script>
+     document.getElementById("submit").addEventListener("click",function(){
+            document.getElementById("submit").innerHTML=document.getElementById("fname").value+document.getElementById("lname").value
+     });
+</script>
+    
+</html>
