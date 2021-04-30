@@ -1,0 +1,75 @@
+<!-- LAB 1-->
+<!-- Title:To build a castle using different mouse events -->
+<!-- Author:DIVYA BHAT_1NT18IS055 -->
+<!-- Date:16-04-2021 -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Castle</title>
+</head>
+<body>
+    <style>
+        .Castle {
+        width: 320px;
+        padding: 100px;
+        border: 5px solid;
+        margin: 50;
+        background-color:slateblue;
+        }
+        .Court {
+        width: 300px;
+        padding: 100px;
+        border: 5px solid;
+        margin: 50;
+        background-color:blue;
+        }
+        .Danger {
+        width: 200px;
+        padding: 50px;
+        border: 5px solid;
+        margin: 50;
+        background-color:crimson;
+        }
+        .Path {
+        width: 700px;
+        padding: 20px;
+        border: 5px solid;
+        margin: 50;
+        background-color:darkred;
+        }
+    </style>
+    <center><h1>Welcome To the Castle</h1> </center>
+    <div class ="Castle" id="Castle">
+        <div class="Court" id="Court">
+            <div class="Danger" id="Danger">
+                <div class="Path" id="Path">
+                </div> 
+            </div>
+        </div>
+    </div>
+    <script>
+        let first=document.getElementById('Castle');
+       first.addEventListener('mouseover',()=>{
+           console.log('You have entered castle');
+       })
+       let second=document.getElementById('Court');
+       second.addEventListener('mouseover',()=>{
+           console.log('You entered Court');
+       })
+       let third=document.getElementById('Danger');
+       third.addEventListener('dblclick',()=>{
+           console.log("You are in Danger Zone");
+       })
+       fourth=document.getElementById('Path');
+       fourth.addEventListener('mouseover',()=>{
+           console.log('You are going out of the castle');
+       })
+    </script>
+
+</body>
+</html>
