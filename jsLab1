@@ -8,6 +8,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="">
     <title>LAB</title>  
+    <style>
+        #container{
+            margin-left: 500px;
+            margin-right: 500px;
+            margin-top: 200px;
+            font-size: 20px;
+            background-color: grey;
+            padding: 100px;
+        }
+        
+    </style>
 </head>
         <center><h1>Registration</h1></center>
         <div id ="container">
@@ -28,8 +39,10 @@
 <p id ="demo"></p>
 <script>
      document.getElementById("submit").addEventListener("click",function(){
-            document.getElementById("submit").innerHTML=document.getElementById("fname").value+document.getElementById("lname").value
+            document.getElementById("demo").innerHTML=document.getElementById("fname").value+document.getElementById("lname").value;
+            alert("Entered successfully");
      });
 </script>
     
 </html>
+
