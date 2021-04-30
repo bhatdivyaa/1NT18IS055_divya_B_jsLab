@@ -1,0 +1,100 @@
+<!-- LAB 1-->
+<!-- Title:Number game using the object and log concept -->
+<!-- Author:DIVYA BHAT@1NT18IS055 -->
+<!-- Date:23-04-2021 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application</title>
+    <Style>
+        .one{
+            margin-top: 100px;
+            margin-left: 200px;
+            margin-right: 200px;
+            background-color:darkgray;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            padding: 100px;
+        }
+    </Style>
+    </head>
+    <body>
+        <center><h1>Number Game</h1></center>
+        <div class ="one" id="one">
+        <input type="text" id="player1" placeholder="Enter a  number"id="number" >
+        <button id="button1">Player1</button>
+        <br>
+        <br>
+        <input type="text" id="player2" placeholder="Enter a  number"id="number" >
+        <button id="button2">Player2</button>
+        <br>
+        <br>
+        <button id="button3">Display</button>
+        <br>
+        <br>
+        </div>
+        <p id="demo"></p>
+        <script>
+
+        var play1={
+                name:"ABC",
+                log:[],
+                detail:function (){
+                document.getElementById('demo').innerHTML=(this.log);
+
+                    },
+                 Id:101
+                }
+        var play2={
+                name:"XYZ",
+                log:[],
+                detail:function (){
+                document.getElementById('demo').innerHTML=(this.log);
+                },
+                Id:102
+            }
+            var integers =[0,1,2,3,4,5,6,7,8,9];
+            var arr =[];
+            var arr1 =[];
+            var x=0;
+
+               let sub1=document.getElementById('button1');
+                sub1.addEventListener('click',()=>{
+                arr.push(document.getElementById('player1').value);
+                play1.log.push(document.getElementById('player1').value);
+                alert(play1.name+" entered");
+                play1.detail();
+                console.log("Added");
+            });
+
+               let sub2=document.getElementById('button2');
+                sub2.addEventListener('click',()=>{
+                arr1.push(document.getElementById('player2').value);
+                play2.log.push(document.getElementById('player2').value);
+                alert(play2.name+" entered");
+                play2.detail();
+                console.log("Added")
+            });
+            
+
+            let sub3=document.getElementById('button3');
+            sub3.addEventListener('click',()=>{
+                
+                {
+                  let arr3= arr.concat(arr1);
+                    console.log(arr3);
+                   
+                   for(x=0;x<2;x++)
+                   {
+                    document.write(arr3[x]);
+                    alert("WOW!"+play1.name +"and" +play2.name +"created a number"); 
+                   }
+                  
+                } 
+            });
+            </script>
+    </body>
+    </html>
+    
