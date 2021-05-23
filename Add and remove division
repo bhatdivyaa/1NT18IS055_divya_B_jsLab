@@ -1,0 +1,72 @@
+<!-- LAB 1-->
+<!-- Title:Element Nesting -->
+<!-- Author:DIVYA BHAT_1NT18IS055 -->
+<!-- Date:16-04-2021 -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Puzzle</title>
+    <style>
+        .Area1 {
+        width: 450px;
+        padding: 80px;
+        border: 5px solid;
+        margin: 50;
+        background-color:slateblue;
+        }
+        .Area2 {
+        width: 270px;
+        padding: 80px;
+        border: 5px solid;
+        margin: 50;
+        background-color:blue;
+        }
+        .Area3 {
+        width: 80px;
+        padding: 80px;
+        border: 5px solid;
+        margin: 50;
+        background-color:crimson;
+        }
+    </style>
+</head>
+<body>
+    <div class ="Area1" id="Area1">
+        <div class="Area2" id="Area2">
+            <div class="Area3" id="Area3"> 
+            </div>
+        </div>
+    </div>
+    <script>
+        let first=document.getElementById('Area1');
+       first.addEventListener('mouseover',()=>{
+           console.log('Welcome');
+       })
+       let second = document.getElementById('Area2')
+       second.addEventListener('click',()=>{
+        let newDiv=document.createElement('div');
+       document.body.append(newDiv)
+       newDiv.style.backgroundColor = "pink"
+       newDiv.style.height = "200px"
+       newDiv.style.width = "200px"
+       newDiv.style.marginLeft = "500px"
+       newDiv.style.marginTop = "100px"
+       newDiv.innerText = "Welcome to new place "    
+       })
+       let third=document.getElementById('Area3')
+        third.addEventListener('dblclick',()=>{
+            var x = document.getElementById('Area1');
+             if (x.style.display == "none") {
+                     x.style.display = "block";
+                         } else {
+                 x.style.display = "none";
+             }
+       });
+    </script>
+</body>
+</html>
