@@ -1,0 +1,42 @@
+//<!-- LAB 1-->
+//<!-- Title:Array and loop -->
+//<!-- Author:DIVYA BHAT@1NT18IS055 -->
+//<!-- Date:21-05-2021 -->
+
+
+let numbers =[1,2,3,4,5,6,7,8,9,10];
+let nums =[];
+let even =[];
+let odd = [];
+
+ console.log("Numbers initially")
+for(let i=0;i<numbers.length;i++)
+{
+    console.log(numbers[i])
+    nums.push(numbers[i]+2)
+}
+console.log("Numbers after adding")
+for(let j=0;j<nums.length;j++)
+{
+  console.log(nums[j])
+}
+
+for(let i=0;i<nums.length;i++)
+{
+  if(nums[i]%2==0){
+    even.push(nums[i])
+  }
+   else{
+     odd.push(nums[i])
+   }
+}
+console.log("Even numbers")
+for(let i=0;i<even.length;i++)
+{
+  console.log(even[i] +"\t")
+}
+console.log("Odd numbers")
+for(let i=0;i<odd.length;i++)
+{
+  console.log(odd[i] +"\t")
+}
