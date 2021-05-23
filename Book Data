@@ -1,0 +1,45 @@
+//<!-- LAB -->
+//<!-- Title:Array and loop with Book Data -->
+//<!-- Author:DIVYA BHAT@1NT18IS055 -->
+//<!-- Date:21-05-2021 -->
+
+let book = [
+    {
+        "title" : "Avarana",
+        "authour" : "S L Bhairappa",
+        "Id": "001",
+        "price" : "300"
+    },
+    {
+        "title" : "Nee hinga nodabyada Nanna",
+        "authour" : "Ravi belagere",
+        "Id": "002",
+        "price" : "500"
+    },
+    {
+        "title" : "Dollar Sose",
+        "authour" : "Sudha Murti",
+        "Id": "003",
+        "price" : "350"
+    },
+    {
+        "title" : "Davinci Code",
+        "authour" : "Dan Brown",
+        "Id": "004",
+        "price" : "500"
+    }
+]
+
+function findData(bname,prop){
+    for(let i=0;i<book.length;i++)
+    {
+        if(book[i].title==bname){
+        return book[i][prop]
+    }
+    else{
+        console.log("No such book record")
+         }
+    }
+}
+let resultData = findData('Dollar Sose','Id');
+console.log(resultData)
