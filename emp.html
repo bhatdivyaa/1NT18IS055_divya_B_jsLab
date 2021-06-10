@@ -48,7 +48,9 @@ function onClick(){
     obj.Email = document.getElementById('eml').value;
     obj.Desig = document.getElementById('desig').value;
     obj.Salary= document.getElementById('sal').value;
-    obj.skills = document.getElementById('skill').value;
+    const chars = document.getElementById('skill').value;
+    let words = chars.split(',');
+    obj.skill = words;
     arry.push(obj)
     console.log(arry)
 }
