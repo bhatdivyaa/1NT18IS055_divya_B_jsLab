@@ -1,0 +1,175 @@
+<!-- LAB-->
+<!-- Title:Form validation -->
+<!-- Author:DIVYA BHAT@1NT18IS055 -->
+<!-- Date:11-06-2021 -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Employee data</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src=src.js defer></script>
+        </head>
+        <Style>
+
+        </Style>
+    <body>
+        <h1>Enter Employee Details</h1>
+        <div name = "frm">
+            <form   onsubmit="return validateName()">
+            <label>Name</label><br>
+            <input type="text" id="name" placeholder="Enter name" autocomplete="off"  ><br><br>
+            <label>Id</label><br>
+            <input type="text" id="id" placeholder="Enter id" autocomplete="off"  ><br><br>
+            <label>Contact No</label><br>
+            <input type="text" id="num" placeholder="Enter your contact num" autocomplete="off" ><br><br>
+            <label>Email-id</label><br>
+            <input type="email" id="eml" placeholder="Enter email" autocomplete="off" ><br><br>
+            <label>Designation</label><br>
+            <input type="text" id="desig" placeholder="Enter Designation" autocomplete="off"><br><br>
+            <label>Salary</label><br>
+            <input type="text" id="sal" placeholder="Enter Salary" autocomplete="off"><br><br>
+            <label>Skill</label><br>
+            <input type="text" id="skill" placeholder="enter skill sets"autocomplete="off" ><br><br>
+            <button onclick="onClick()" id="button">Submit</button>
+            </form>
+        </div> 
+        <h3>Search here!</h3>
+        <div id="search">
+        <label>Enter Id</label><br>
+        <input type="text" id ="id1"><br>
+        <button onclick="search()" id="button1">Search</button><br><br><br>
+    </div>
+    </body>
+</html>
+
+<script>
+    const arry =[];
+
+    var nam = document.getElementById('name');
+    var id  = document.getElementById('id');
+    var num = document.getElementById('num');
+    var eml = document.getElementById('eml');
+    var sl  = document.getElementById('sal');
+    var skl = document.getElementById('skill');
+    var deg = document.getElementById('desig');
+
+    function validateName()
+{
+    if(nam.value.trim() =='')
+    {
+        alert("Enter name");
+        nam.focus();
+        return false;
+    }
+    else if(!(/^([A-Z])([a-z])+/).test(nam.value))
+    {
+        alert("Invalid name");
+        nam.focus();
+        return false;
+    }
+    if(id.value.trim() == '')
+    {
+        alert("Enter the Id");
+        id.focus();
+        return false;
+    }
+    else if(!(/[0-9]{1,10}/).test(id.value))
+    {
+        alert("Invalid id");
+        id.focus();
+        return false;
+    }
+    else if(num.value.trim() == '')
+    {
+        alert("Enter the contact number");
+        num.focus();
+        return false;
+    }
+    else if(!(/[0-9]{10}/).test(num.value))
+    {
+        alert("Invalid contact number");
+        num.focus();
+        return false;
+    }
+
+    else if(eml.value.trim() =='')
+    {
+        alert("Enter email");
+        eml.focus();
+        return false;
+    }
+    else if(!(/^[a-zA-Z0-9]+@[a-z.]+$/).test(eml.value))
+    {
+        alert("Invalid email");
+        eml.focus();
+        return false;
+    }
+    else if(sl.value.trim() =='')
+    {
+        alert("Enter salary");
+        sal.focus();
+        return false;
+    }
+    else if(!(/^[0-9]{3,6}/).test(sl.value))
+    {
+        alert("Invalid salary");
+        sl.focus();
+        return false;
+    }
+    else if(deg.value.trim() =='')
+    {
+        alert("Enter designation");
+        deg.focus();
+        return false;
+    }
+    else if(!(/^[a-zA-Z]+/).test(deg.value))
+    {
+        alert("Invalid designation");
+        deg.focus();
+        return false;
+    }
+
+    else if(skl.value.trim() =='')
+    {
+        alert("Enter skills");
+        skl.focus();
+        return false;
+    }
+    else if(!(/[a-zA-Z0-9,]/).test(deg.value))
+    {
+        alert("Invalid skills");
+        skl.focus();
+        return false;
+    }
+    else{
+        return true;
+    }
+}
+function onClick(){
+    var obj={};
+    obj.Name = document.getElementById('name').value;
+    obj.Id = document.getElementById('id').value;
+    obj.Phone_no = document.getElementById('num').value;
+    obj.Email = document.getElementById('eml').value;
+    obj.Desig = document.getElementById('desig').value;
+    obj.Salary= document.getElementById('sal').value;
+    const chars = document.getElementById('skill').value;
+    let words = chars.split(',');
+    obj.skill = words;
+    arry.push(obj)
+    console.log(arry)
+}
+
+
+function search()
+{
+    var emp_id = document.getElementById('id1').value;
+    for(let i=0;i<arry.length;i++){
+        if(arry[i].Id==emp_id){
+            console.log(arry[i])
+        }
+    }
+}
+<script>
