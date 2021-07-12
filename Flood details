@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>Flood info</title>
+    <script src=sample.js defer></script>
+    <style>
+        body {
+            font-family:Georgia, 'Times New Roman', Times, serif;
+        }
+        input{
+            padding:5px 50px;   
+        }
+    </style>
+    <head>
+    <body>
+        <center><h1>Flood Details of India</h1></center>
+        <form method="post">
+            <label>State</label><br>
+            <input type="text" id="state" placeholder="Enter the state" autocomplete="off" required="true"><br>
+            <label>Place</label><br>
+            <input type="text" id ="place"placeholder="Enter the location" autocomplete="off" required="true"><br>
+            <label>Date</label><br>
+            <input type="text" id="dt" placeholder="Enter time" autocomplete="off" required="true"><br>
+            <label>Causes</label><br>
+            <input type="text" id ="cause"placeholder="Enter the cause" autocomplete="off" required="true"><br>
+            <label>Damages</label><br>
+            <input type="text" id="dmg" placeholder="Enter the damages" autocomplete="off" required="true"><br>
+            <label>Relief and monetary fund</label><br>
+            <input type="text" id="rf" placeholder="Enter the details of relief" autocomplete="off" required="true"><br>
+            <button type="button" id="button" value="submit" onclick="onClick()">Submit</button>
+        </form>
+        
+        <center><h3>Search here!</h3></center>
+        <div id="search">
+        <label>Enter place</label><br>
+        <input type="text" id ="id1"><br>
+        <button onclick="search()" id="button1">Search</button><br><br><br>
+        
+    </body>
+    
+    <script>
+    
+    const arry =[];
+
+function onClick(){
+    var obj={};
+
+    obj.State = document.getElementById('state').value;
+    const Place = document.getElementById('place').value;
+    let word = Place.split(',');
+    obj.Places = word;
+
+
+    obj.Date = document.getElementById('dt').value;
+
+    const cause = document.getElementById('cause').value; // Storing the causes in a sub array called Causes which is an object of array
+    let words = cause.split(',');
+    obj.Causes = words;
+
+    const damage = document.getElementById('dmg').value; // Storing the effects in a sub array called Causes which is an object of array
+    let words1 = damage.split(',');
+    obj.Damages = words1;
+
+    const relief = document.getElementById('rf').value;
+    let words2 = relief.split(',');
+    obj.Relief = words2;
+
+
+    
+
+    arry.push(obj);
+    console.log(arry);
+}
+
+function search()
+{
+    var location = document.getElementById('id1').value;
+    for(let i=0;i<arry.length;i++){
+        if(arry[i].State== location){
+            console.log(arry[i])
+        }
+        else
+        {
+            console.log('Not found');
+        }
+    }
+}
+    </script>
+
+</html>
